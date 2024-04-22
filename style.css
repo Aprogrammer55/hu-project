@@ -454,6 +454,7 @@ table {
 @media (max-width: 550px) {
     table {
         width: 90%;
+        font-size: 12px;
     }
 }
 
