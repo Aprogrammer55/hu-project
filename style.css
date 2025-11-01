@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 ul {
@@ -77,7 +77,7 @@ ul {
 }
 
 @keyframes fill {
-    100%{
+    100% {
         color: white;
         background-color: var(--blue-color);
     }
@@ -109,7 +109,6 @@ ul {
     }
 }
 
-
 .section h1::before {
     content: "";
     width: 20px;
@@ -123,7 +122,7 @@ ul {
     transition: 1s;
 }
 
-.section h1:hover::before{
+.section h1:hover::before {
     animation: move-right 1s 1 forwards;
 }
 
@@ -140,19 +139,20 @@ ul {
     transition: 1s;
 }
 
-.section h1:hover::after{
-    animation: move-left 1.0s 1 forwards; 
+.section h1:hover::after {
+    animation: move-left 1s 1 forwards;
 }
 /* End Section */
 
 /* End Global Rules */
 :root {
     --blue-color: #0075ff;
-    --blue-alt-color: #0d69d5;
-    --orange-color: #f59e0b;
+    --blue-alt-color: GOLD;
+    --orange-color: #020201;
     --green-color: #22c55e;
     --red-color: #f44336;
     --grey-color: #888;
+    --linear-color: linear-gradient(45deg, #ff6b6b, #48dbfb);
 }
 
 span::after {
@@ -210,7 +210,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.8),
+        rgba(2, 179, 55, 0.8)
+    );
+    backdrop-filter: blur(2px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     font-family: "Roboto Slab", serif;
@@ -223,12 +228,10 @@ nav .logo {
     margin-top: 5px;
 }
 
-
-nav .logo img{
+nav .logo img {
     height: 100%;
     width: 100%;
     border-radius: 20px;
-
 }
 
 nav ul {
@@ -246,18 +249,20 @@ nav ul li a {
 }
 
 @media (max-width: 500px) {
-    nav ul li a,nav .sections {
+    nav ul li a,
+    nav .sections {
         font-size: 14px;
     }
 }
 
 @media (max-width: 370px) {
-    nav ul li a,nav .sections {
+    nav ul li a,
+    nav .sections {
         font-size: 12px;
     }
 }
 
-nav ul li .youtube{
+nav ul li .youtube {
     color: red;
 }
 
@@ -309,8 +314,6 @@ nav .list ul {
     flex-direction: column;
 }
 
-
-
 header .cover {
     width: 100%;
     height: 100%;
@@ -335,33 +338,36 @@ header .cover .caption p {
     font-weight: 800;
     font-size: 30px;
     font-family: "Open Sans", sans-serif;
+    margin-left: 2vw;
+    text-shadow: -2px 2px 6px rgba(0, 180, 255, 0.6),
+        -4px 4px 12px rgba(0, 180, 255, 0.3);
 }
 
 /* end header */
 /* Start Info */
-.info{
+.info {
     width: 100%;
     height: 500px;
     display: grid;
     margin-top: 20px;
     margin-bottom: 20px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     border: 1px solid black;
     border-radius: 10px;
 }
 
-.card:hover,.second-card:hover {
+.card:hover,
+.second-card:hover {
     animation-play-state: paused;
 }
 
-
-.card,.second-card {
+.card,
+.second-card {
     height: 50%;
-    background-color: #b925be17;
     box-shadow: -21px 22px 32px 10px rgba(12, 156, 74, 0.75);
-    -webkit-box-shadow: -21px 22px 32px 10px rgba(26,92,55,0.75);
-    -moz-box-shadow: -21px 22px 32px 10px rgba(26,92,55,0.75);
+    -webkit-box-shadow: -21px 22px 32px 10px rgba(26, 92, 55, 0.75);
+    -moz-box-shadow: -21px 22px 32px 10px rgba(26, 92, 55, 0.75);
     border-radius: 10px;
     text-align: center;
     transition: 1s;
@@ -369,10 +375,13 @@ header .cover .caption p {
 
 .card {
     animation: down 4s infinite forwards;
+    background-image: url(download.jpeg);
+    background-position: top top;
+    background-size: cover;
 }
 
 @keyframes down {
-    50% { 
+    50% {
         transform: translateY(250px);
     }
 }
@@ -381,10 +390,13 @@ header .cover .caption p {
     position: relative;
     top: 250px;
     animation: up 4s infinite forwards;
+    background-image: url(download.jpeg);
+    background-position: bottom right;
+    background-size: cover;
 }
 
 @keyframes up {
-    50% { 
+    50% {
         transform: translateY(-250px);
     }
 }
@@ -392,14 +404,16 @@ header .cover .caption p {
 .info div h3 {
     margin-top: 10px;
     margin-bottom: 10px;
-    color: var(--blue-color);
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
 }
 
 .info div ul li {
-    list-style: disc;
     margin-top: 14px;
     font-weight: 600;
-    color: var(--blue-alt-color);
+    color: pink;
+    font-weight: bold;
 }
 
 .info div ul span {
@@ -426,7 +440,7 @@ header .cover .caption p {
     }
 
     @keyframes down {
-        50% { 
+        50% {
             transform: translateY(150px);
         }
     }
@@ -436,12 +450,86 @@ header .cover .caption p {
     }
 
     @keyframes up {
-        50% { 
+        50% {
             transform: translateY(-150px);
         }
     }
 }
 /* End Info */
+/* Start about me */
+.about-me {
+    width: 100%;
+    height: 800px;
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-me .reflection {
+    display: flex;
+}
+
+.about-me .reflection img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* optional, for smooth corners */
+    -webkit-box-reflect: right;
+}
+
+.about-me .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.8),
+        rgba(0, 198, 255, 0.8)
+    );
+    backdrop-filter: blur(2px);
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+.about-me .cover:hover {
+    transform: rotate(180deg);
+}
+
+.about-me .cover .caption {
+    width: 70%;
+    height: 90%;
+    z-index: 2;
+    background-color: rgba(50, 255, 204, 0.3);
+    background-color: linear-gradient(
+        135deg,
+        rgba(0, 123, 255, 0.8),
+        rgba(3, 247, 133, 0.8)
+    );
+    border-radius: 10px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    margin-left: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me .cover .caption p {
+    color: white;
+    font-weight: 800;
+    font-size: 30px;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 2vw;
+    text-shadow: -2px 2px 6px rgba(0, 180, 255, 0.6),
+        -4px 4px 12px rgba(0, 180, 255, 0.3);
+}
+
+/* End about me */
 /* Start Projects */
 table {
     border-collapse: collapse;
@@ -498,7 +586,7 @@ footer {
     background-color: #01263f;
 }
 
-footer div{
+footer div {
     width: 100%;
     height: 100px;
     color: white;
